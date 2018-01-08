@@ -16,4 +16,4 @@ Route::get('/formAdicionar', 'ClientesController@formAdicionar')->name('formAdic
 Route::get('/formEditar/{id}', 'ClientesController@formEditar')->name('formEditar');
 Route::post('/editar/{id}', 'ClientesController@editar')->name('editar');
 Route::post('/novo', 'ClientesController@novo')->name('novo');
-Route::post('/delete', 'ClientesController@delete')->name('delete');
+Route::get('/delete/{id?}', 'ClientesController@delete')->name('delete');
