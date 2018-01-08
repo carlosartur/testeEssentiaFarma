@@ -4,8 +4,8 @@
 		<thead>
 			<th>#</th>
 			<th>Nome</th>
-			<th>Email</th>
 			<th>Foto</th>
+			<th>Email</th>
 			<th>Endereço</th>
 			<th>Ações</th>
 		</thead>
@@ -13,12 +13,12 @@
 			<tr>
 				<td>{{ $cliente->id }}</td>
 				<td>{{ $cliente->nome }}</td>
-				<td>{{ $cliente->email }}</td>
 				<td>
 					@if($cliente->foto)
 						<img style="max-width: 50px; max-height: 50px;" src="data:image/png;base64, {{ base64_encode(Storage::get($cliente->foto)) }}"></img>
 					@endif
 				</td>
+				<td>{{ $cliente->email }}</td>
 				<td>{{ 
 					$cliente->endereco 
 						? $cliente->endereco->paraImprimir()
