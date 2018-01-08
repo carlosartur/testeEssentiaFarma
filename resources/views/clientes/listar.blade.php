@@ -41,18 +41,17 @@
 <script>
 	$(function() { 
 		$('.deletar').click(function() {
+			var $id = $(this).data('id');
 			swal({
 			  title: "Você tem certeza?",
 			  text: "Isso não pode ser desfeito",
 			  icon: "warning",
-			  buttons: ['Cancalar', 'Sim, deletar'],
+			  buttons: ['Cancelar', 'Sim, deletar'],
 			  dangerMode: true
 			})
 			.then((willDelete) => {
 			  if (willDelete) {
-				swal("Cliente excluido!", {
-				  icon: "success",
-				});
+				window.location = '{{ route("delete") }}' + '/' + $id; 
 			  } else {
 				swal("Cliente mantido!");
 			  }
