@@ -22,7 +22,10 @@ class CreateEnderecosTable extends Migration
 			$table->string('estado', 255);
 			$table->string('pais', 255);
 			$table->integer('cliente_id')->unsigned();
-			$table->foreign('cliente_id')->references('id')->on('clientes');
+			$table->foreign('cliente_id')
+				->references('id')
+				->on('clientes')
+				->onDelete('cascade');
             $table->timestamps();
         });
     }
